@@ -7,8 +7,6 @@ class Item(BaseModel):
 
 app = FastAPI()
 
-items = []
-
 @app.get('/')
 def root():
     return {"Hello" : "World"}
