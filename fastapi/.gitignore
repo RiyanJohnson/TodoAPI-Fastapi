@@ -9,3 +9,5 @@
 !index.html
 !script.js
 !style.css
+!requirements.txt
+!fastapi

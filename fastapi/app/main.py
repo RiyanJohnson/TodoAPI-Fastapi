@@ -63,3 +63,7 @@ async def update_item(item_id: int, update: ItemIn):
     query = items_table.update().where(items_table.c.id == item_id).values(**update.dict())
     await database.execute(query)
     return {**update.dict(), "id": item_id}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
