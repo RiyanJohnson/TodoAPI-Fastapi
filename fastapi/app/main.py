@@ -9,6 +9,17 @@ metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or restrict to ["http://127.0.0.1:5500"] if using Live Server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 @app.on_event("startup")
 async def startup():
     await database.connect()
@@ -29,7 +40,7 @@ async def create_item(item:ItemIn):
 
 @app.get('/items', response_model=list[Item])
 async def list_items(limit: int = 20):
-    query = items_table.select().limit(limit)
+    query = items_table.select().where(items_table.c.id > 1)
     return await database.fetch_all(query)
 
 @app.get("/items/{item_id}", response_model=Item)
