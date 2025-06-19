@@ -5,3 +5,7 @@
 !database.py
 !schemas.py
 !.gitignore
+!frontend
+!index.html
+!script.js
+!style.css
