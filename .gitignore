@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But do not ignore directories, so Git can check for files inside them
+!*/
+
+# Do not ignore these specific files
+!main.py
+!models.py
+!database.py
+
+# (Optional) Do not ignore the .gitignore file itself
+!.gitignore
