@@ -1,5 +1,7 @@
 *
+!app
 !main.py
 !models.py
 !database.py
+!schemas.py
 !.gitignore
