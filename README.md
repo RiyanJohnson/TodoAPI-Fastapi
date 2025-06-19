@@ -1,4 +1,3 @@
-Sure! Here’s a clean, professional **README.md** for your backend FastAPI project based on your `main.py` and tech stack (excluding frontend):
 
 ````markdown
 # FastAPI Todo API
